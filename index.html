@@ -27,6 +27,9 @@
             padding: 1rem;
             height: calc(100vh - 50px); /* Adjust for top bar height */
             overflow-y: auto; /* If content exceeds sidebar height */
+            position: sticky; /* This makes the sidebar sticky */
+            top: 50px; /* This matches the height of the top-bar */
+            align-self: flex-start; /* Ensures the sidebar starts at the top of the content */
         }
         .sidebar nav {
             display: flex;
@@ -118,64 +121,6 @@
                     LinkedIn: <a href="https://www.linkedin.com/in/hikal-mazahra-6021a7187/">Hikal Mazahra</a>
                 </p>
             </div>
-            <div id="projects" class="section">
-                <h2>Project Experience</h2>
-                <div class="project">
-                    <h3>Metronome App</h3>
-                    <p>Scrum Master | Flutter, Dart, MongoDB | Sep 2024 - Present</p>
-                    <ul>
-                        <li>Leading agile ceremonies, sprint planning, and retrospectives to optimize development cycles.</li>
-                        <li>Designing and developing a cross-platform metronome app with features like voice control and real-time practice tracking.</li>
-                    </ul>
-                </div>
-                <div class="project">
-                    <h3>Homepwner App</h3>
-                    <p>Android Programming Class Project | Java, Android Studio | Sep 2024 - Present</p>
-                    <ul>
-                        <li>Developing an app for cataloging possessions for home insurance purposes.</li>
-                        <li>Utilizing Java in Android Studio to build features for item entry and tracking.</li>
-                    </ul>
-                </div>
-            </div>
-            <div id="experience" class="section">
-                <h2>Professional Experience</h2>
-                <div class="experience">
-                    <h3>AT&T, King of Prussia, PA</h3>
-                    <p>Radio Network Engineer Intern</p>
-                    <ul>
-                        <li>Utilized VBA to automate functionalities, improving efficiency.</li>
-                        <li>Analyzed cell tower plumb diagrams for network design.</li>
-                    </ul>
-                </div>
-                <div class="experience">
-                    <h3>Lockheed Martin, Moorestown, NJ</h3>
-                    <p>Systems Engineer Intern (DoD Secret Clearance Granted)</p>
-                    <ul>
-                        <li>Implemented CI/CD processes using Git/Bitbucket and Jira/Crucible.</li>
-                        <li>Developed software solutions for version control migration.</li>
-                    </ul>
-                </div>
-                <div class="experience">
-                    <h3>LaScala's Fire, Glassboro, NJ</h3>
-                    <p>Bartender/Server</p>
-                    <ul>
-                        <li>Managed bartending while pursuing full-time studies.</li>
-                        <li>Built rapport with guests, enhancing dining experience.</li>
-                    </ul>
-                </div>
-            </div>
-            <div id="education" class="section">
-                <h2>Education</h2>
-                <div class="education">
-                    <h3>Rowan University</h3>
-                    <p>2023 - 2025</p>
-                    <p>Expected Graduation: Bachelor of Science in Computer Science</p>
-                </div>
-                <div class="education">
-                    <h3>Drexel University</h3>
-                    <p>2019 - 2021</p>
-                </div>
-            </div>
             <div id="programming" class="section">
                 <h2>Programming Languages</h2>
                 <div class="languages">
@@ -195,6 +140,77 @@
                     <span>SQL</span>
                 </div>
             </div>
+            <div id="projects" class="section">
+                <h2>Project Experience</h2>
+                <div class="project">
+                    <h3>Metronome App</h3>
+                    <p>Scrum Master | Flutter, Dart, MongoDB | Sep 2024 - Present</p>
+                    <ul>
+                        <li>Leading agile ceremonies, sprint planning, and retrospectives to optimize development cycles.</li>
+                        <li>Designing and developing a cross-platform metronome app using Flutter in Dart with MongoDB as the backend for secure and scalable
+                            data management.</li>
+                        <li>Implementing features like voice control and user-specific sign-in, allowing conductors to assign musical pieces with tempo goals and
+                            monitor band members' practice progress in real-time.</li>
+                        <li>Prioritizing user experience (UX) to create an intuitive and engaging interface, supporting seamless practice tracking and performance
+                            assessment.</li>   
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Homepwner App</h3>
+                    <p>Android Programming Class Project | Java, Android Studio | Sep 2024 - Present</p>
+                    <ul>
+                        <li>Developing an app for cataloging possessions for home insurance purposes.</li>
+                        <li>Utilizing Java in Android Studio to build features for item entry and tracking.</li>
+                        <li>Designing an intuitive interface to enhance user experience, with options for adding photos and detailed descriptions for each item.</li>
+
+                    </ul>
+                </div>
+            </div>
+            <div id="experience" class="section">
+                <h2>Professional Experience</h2>
+                <div class="experience">
+                    <h3>AT&T, King of Prussia, PA</h3>
+                    <p>Radio Network Engineer Intern</p>
+                    <ul>
+                        <li> Learned and utilized VBA to enhance and automate functionality in company programs, improving efficiency and data management.</li>
+                        <li>Analyzed cell tower plumb diagrams for network design.</li>
+                        <li> Conducted site visits to cell towers, assisting senior engineers in performing tests and maintenance to ensure operation and compliance
+                            with standards.</li>
+                    </ul>
+                </div>
+                <div class="experience">
+                    <h3>Lockheed Martin, Moorestown, NJ</h3>
+                    <p>Systems Engineer Intern (DoD Secret Clearance Granted)</p>
+                    <ul>
+                        <li>Implemented CI/CD processes using Git/Bitbucket and Jira/Crucible.</li>
+                        <li>Developed software solutions for version control migration.</li>
+                        <li> Created comprehensive documentation and a training package to facilitate engineers' transition to the new workflow and toolsets,
+                            enhancing team productivity and adoption. </li>
+                    </ul>
+                </div>
+                <div class="experience">
+                    <h3>LaScala's Fire, Glassboro, NJ</h3>
+                    <p>Bartender/Server</p>
+                    <ul>
+                        <li>Managed a full-time bartending role while pursuing a full-time university degree, demonstrating strong time management and work ethic.</li>
+                        <li>Built rapport with guests, enhancing dining experience.</li>
+                        <li> Supported team members during high-volume shifts, enhancing workflow and customer satisfaction through effective collaboration.</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="education" class="section">
+                <h2>Education</h2>
+                <div class="education">
+                    <h3>Rowan University</h3>
+                    <p>2023 - 2025</p>
+                    <p>Expected Graduation: Bachelor of Science in Computer Science</p>
+                </div>
+                <div class="education">
+                    <h3>Drexel University</h3>
+                    <p>2019 - 2021</p>
+                </div>
+            </div>
+            
         </div>
     </div>
 
