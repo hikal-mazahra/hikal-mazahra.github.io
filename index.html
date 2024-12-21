@@ -2,13 +2,202 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hikal Mazahra's Portfolio</title>
+    <title>Hikal Mazahra - Senior Computer Science Student at Rowan University</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50; /* Dark Blue Gray */
+            color: #ecf0f1; /* Light Gray for text */
+        }
+        .top-bar {
+            background-color: #34495e; /* Slightly lighter Dark Blue Gray */
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+        }
+        .main-layout {
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #2980b9; /* Blue for sidebar */
+            padding: 1rem;
+            height: calc(100vh - 50px); /* Adjust for top bar height */
+            overflow-y: auto; /* If content exceeds sidebar height */
+        }
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+        .sidebar nav a:hover {
+            background-color: #3498db; /* Hover effect for sidebar links */
+        }
+        .content {
+            flex: 1;
+            padding: 2rem;
+        }
+        .section {
+            margin-bottom: 2rem;
+            background: #34495e;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .section h2 {
+            color: #27ae60; /* Green for emphasis */
+        }
+        .project, .experience, .education {
+            border: 1px solid #7f8c8d; /* Dark Gray */
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #2c3e50;
+            border-radius: 4px;
+        }
+        .contact-info {
+            font-style: italic;
+            color: #ecf0f1; /* Changed to white for better visibility */
+        }
+        .contact-info a {
+            color: #3498db; /* Light Blue for links */
+        }
+        .usa-citizen {
+            font-style: italic;
+            color: #2980b9; /* Blue for emphasis on citizenship */
+            margin-top: 10px;
+        }
+        .languages, .databases {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .languages span, .databases span {
+            background-color: #7f8c8d;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>This is where I'll showcase my projects and skills.</p>
-    <a href="https://github.com/hikal-mazahra">My GitHub</a>
+    <div class="top-bar">
+        <h1>Hikal Mazahra</h1>
+    </div>
+    <div class="main-layout">
+        <div class="sidebar">
+            <nav>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#programming">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Professional Experience</a>
+                <a href="#education">Education</a>
+                
+            </nav>
+        </div>
+        <div class="content">
+            <div id="about" class="section">
+                <h2>About Me</h2>
+                <p class="usa-citizen">USA Citizen</p>
+                <p>Hi! I'm a Computer Science student at Rowan University, with an expected graduation date in May 2025. I've gained experience in coding with Python and VBA through internships, and I'm proficient in Java and Dart from my coursework. My versatility extends to various programming languages, including Scheme, Ada, Prolog, and Ruby. I have demonstrated abilities in leading technical projects, developing custom software solutions, and optimizing network performance.</p>                
+            </div>
+            <div id="contact" class="section">
+                <h2>Contact Info</h2>
+                <p class="contact-info">
+                    Phone: 609-982-9357<br>
+                    Email: <a href="mailto:hikal.mazahra@yahoo.com">hikal.mazahra@yahoo.com</a><br>
+                    GitHub: <a href="https://github.com/hikal-mazahra">hikal-mazahra</a><br>
+                    LinkedIn: <a href="https://www.linkedin.com/in/hikal-mazahra-6021a7187/">Hikal Mazahra</a>
+                </p>
+            </div>
+            <div id="projects" class="section">
+                <h2>Project Experience</h2>
+                <div class="project">
+                    <h3>Metronome App</h3>
+                    <p>Scrum Master | Flutter, Dart, MongoDB | Sep 2024 - Present</p>
+                    <ul>
+                        <li>Leading agile ceremonies, sprint planning, and retrospectives to optimize development cycles.</li>
+                        <li>Designing and developing a cross-platform metronome app with features like voice control and real-time practice tracking.</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Homepwner App</h3>
+                    <p>Android Programming Class Project | Java, Android Studio | Sep 2024 - Present</p>
+                    <ul>
+                        <li>Developing an app for cataloging possessions for home insurance purposes.</li>
+                        <li>Utilizing Java in Android Studio to build features for item entry and tracking.</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="experience" class="section">
+                <h2>Professional Experience</h2>
+                <div class="experience">
+                    <h3>AT&T, King of Prussia, PA</h3>
+                    <p>Radio Network Engineer Intern</p>
+                    <ul>
+                        <li>Utilized VBA to automate functionalities, improving efficiency.</li>
+                        <li>Analyzed cell tower plumb diagrams for network design.</li>
+                    </ul>
+                </div>
+                <div class="experience">
+                    <h3>Lockheed Martin, Moorestown, NJ</h3>
+                    <p>Systems Engineer Intern (DoD Secret Clearance Granted)</p>
+                    <ul>
+                        <li>Implemented CI/CD processes using Git/Bitbucket and Jira/Crucible.</li>
+                        <li>Developed software solutions for version control migration.</li>
+                    </ul>
+                </div>
+                <div class="experience">
+                    <h3>LaScala's Fire, Glassboro, NJ</h3>
+                    <p>Bartender/Server</p>
+                    <ul>
+                        <li>Managed bartending while pursuing full-time studies.</li>
+                        <li>Built rapport with guests, enhancing dining experience.</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="education" class="section">
+                <h2>Education</h2>
+                <div class="education">
+                    <h3>Rowan University</h3>
+                    <p>2023 - 2025</p>
+                    <p>Expected Graduation: Bachelor of Science in Computer Science</p>
+                </div>
+                <div class="education">
+                    <h3>Drexel University</h3>
+                    <p>2019 - 2021</p>
+                </div>
+            </div>
+            <div id="programming" class="section">
+                <h2>Programming Languages</h2>
+                <div class="languages">
+                    <span>Java</span>
+                    <span>JavaScript</span>
+                    <span>HTML</span>
+                    <span>Python</span>
+                    <span>Flutter</span>
+                    <span>Dart</span>
+                    <span>Matlab</span>
+                    <span>Ruby</span>
+                    <span>Scheme</span>
+                </div>
+                <h2>Databases</h2>
+                <div class="databases">
+                    <span>MongoDB</span>
+                    <span>SQL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
