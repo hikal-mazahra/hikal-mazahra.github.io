@@ -17,6 +17,15 @@
             color: #ecf0f1;
             text-align: center;
             padding: 1rem;
+            font-size: 2rem;
+        }
+        .profile-picture {
+            width: 20%;
+            height: 10%;
+            border-radius: 50%; /* Makes the image circular */
+            margin: 0 auto 1rem; /* Center the image */
+            display: block;
+            border: 8px solid #ecf0f1; /* Light border around the image */
         }
         .main-layout {
             display: flex;
@@ -88,11 +97,158 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
+        /* New CSS for logo row */
+        .logo-row {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+        .logo-row img {
+            max-height: 80px; /* Adjust as needed */
+            margin: 0 10px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .social-links a {
+            margin: 0 10px;
+        }
+        .social-links img {
+            width: 40px; /* Adjust size as needed */
+            height: 40px;
+            border-radius: 50%; /* Makes logos circular */
+        }
+        .skills-section {
+            margin-bottom: 2rem;
+            background: #34495e;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .skills-section h2 {
+            color: #27ae60; /* Green for emphasis */
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .skill-item {
+            flex: 0 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            background-color: #7f8c8d;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .skill-item img {
+            width: 50px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .skill-item p {
+            font-size: 14px;
+            color: #ecf0f1; /* Light Gray for text */
+        }
+        dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+dialog::backdrop {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-rect {
+    width: 400px; /* Adjust size as needed */
+    height: 200px;
+    background-color: #3498db; /* Blue color for rectangles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border: none;
+}
+
+.project-rect:hover {
+    transform: scale(1.05); /* Slight scale up on hover */
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.project {
+    display: none; /* Keep this for the hidden detailed project descriptions */
+}
+
+#closeDialog {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#closeDialog:hover {
+    background-color: #c0392b;
+}
+
+
+.project-rect:hover {
+    transform: scale(1.05); /* Slight scale up on hover */
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.company-logo {
+    max-width: 120px; /* Larger logo size to match wider button */
+    max-height: 120px; /* Larger logo size */
+    margin-bottom: 10px; /* Space between logo and job title */
+}
+
+.job-title {
+    font-size: 1.1em; /* Larger font size for better readability */
+    font-family: 'Georgia', serif; /* A nicer, more elegant font */
+    padding: 0 10px; /* Padding to prevent text overflow */
+    word-wrap: break-word; /* Ensures long text wraps nicely */
+    line-height: 1.4; /* Better line spacing for readability */
+}
     </style>
 </head>
 <body>
     <div class="top-bar">
-        <h1>Hikal Mazahra</h1>
+        <img src="pic1.jpg" alt="Hikal Mazahra" class="profile-picture">
+        <h2>Hikal Mazahra</h2>
+        <p>Computer Science student at Rowan University</p>
+        <p>Graduating in May 2025</p>
+    </div>
+    <!-- Added logo row here -->
+    <div class="logo-row">
+        <img src="drexel.png" alt="Drexel Logo">
+        <img src="rowan.png" alt="Rowan Logo">
+        <img src="lockheed.png" alt="Lockheed Logo">
+        <img src="att.png" alt="AT&T Logo">
+
     </div>
     <div class="main-layout">
         <div class="sidebar">
@@ -103,14 +259,26 @@
                 <a href="#projects">Projects</a>
                 <a href="#experience">Professional Experience</a>
                 <a href="#education">Education</a>
-                
             </nav>
         </div>
         <div class="content">
+            <!-- Rest of the content remains unchanged -->
             <div id="about" class="section">
                 <h2>About Me</h2>
-                <p class="usa-citizen">USA Citizen</p>
-                <p>Hi! I'm a Computer Science student at Rowan University, with an expected graduation date in May 2025. I've gained experience in coding with Python and VBA through internships, and I'm proficient in Java and Dart from my coursework. My versatility extends to various programming languages, including Scheme, Ada, Prolog, and Ruby. I have demonstrated abilities in leading technical projects, developing custom software solutions, and optimizing network performance.</p>                
+                <p class="usa-citizen">Hikal Mazahra</p>
+
+                <p class="usa-citizen">U.S. Citizen</p>
+                <p class="usa-citizen">Bachelor of Science in Computer Science</p>
+
+                <p>I'm a Computer Science student at Rowan University, with an expected graduation date in May 2025.</p>
+                <p>I've gained experience in coding with Python and VBA through internships, and I'm proficient in Java and Dart from my coursework. </p>
+                <p>My versatility extends to various programming languages, including Scheme, Ada, Prolog, and Ruby. I have demonstrated abilities in leading technical projects, developing custom software solutions, and optimizing network performance.</p>                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/hikal-mazahra-6021a7187/" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+                    <a href="https://github.com/hikal-mazahra" target="_blank"><img src="github.png" alt="GitHub"></a>
+                    <a href="mailto:hikal.mazahra@yahoo.com" target="_blank"><img src="email.png" alt="Email"></a>
+
+                </div>
             </div>
             <div id="contact" class="section">
                 <h2>Contact Info</h2>
@@ -121,83 +289,161 @@
                     LinkedIn: <a href="https://www.linkedin.com/in/hikal-mazahra-6021a7187/">Hikal Mazahra</a>
                 </p>
             </div>
-            <div id="programming" class="section">
-                <h2>Programming Languages</h2>
-                <div class="languages">
-                    <span>Java</span>
-                    <span>JavaScript</span>
-                    <span>HTML</span>
-                    <span>Python</span>
-                    <span>Flutter</span>
-                    <span>Dart</span>
-                    <span>Matlab</span>
-                    <span>Ruby</span>
-                    <span>Scheme</span>
-                </div>
-                <h2>Databases</h2>
-                <div class="databases">
-                    <span>MongoDB</span>
-                    <span>SQL</span>
+            <div class="skills-section">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <!-- Replace with actual skill icons and descriptions -->
+                    <div class="skill-item">
+                        <img src="leader.png" alt="Skill 0">
+                        <h3>Leadership</h3>
+                        <p>FILL IT IN</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="python.png" alt="Skill 1">
+                        <h3>Python</h3>
+                        <p>FILL IT IN</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="flutter.png" alt="Skill 2">
+                        <h3>Flutter</h3>
+                        <p> FILL IT IN</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="java.png" alt="Skill 3">
+                        <h3>Java</h3>
+                        <p>FILL IT IN</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="SQL.png" alt="Skill 4">
+                        <h3>SQL</h3>
+                        <p>FILL IT IN</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="github.png" alt="Skill 5">
+                        <h3>GitHub</h3>
+                        <p>FILL IT IN</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="JS.png" alt="Skill 6">
+                        <h3>Java Script</h3>
+                        <p>FILL IT IN</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="html.png" alt="Skill 7">
+                        <h3>HTML</h3>
+                        <p>FILL IT IN</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="matlab.png" alt="Skill 8">
+                        <h3>MatLab</h3>
+                        <p>FILL IT IN</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="linux.png" alt="Skill 9">
+                        <h3>Linux</h3>
+                        <p>FILL IT IN</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="mongodb.png" alt="Skill 10">
+                        <h3>MongoDB</h3>
+                        <p>FILL IT IN</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="SQL.png" alt="Skill 11">
+                        <h3>SQL</h3>
+                        <p>FILL IT IN</p>
+                    </div>
+                    <!-- Add more skill items as needed -->
                 </div>
             </div>
-            <div id="projects" class="section">
-                <h2>Project Experience</h2>
-                <div class="project">
-                    <h3>Metronome App</h3>
-                    <p>Scrum Master | Flutter, Dart, MongoDB | Sep 2024 - Present</p>
-                    <ul>
-                        <li>Leading agile ceremonies, sprint planning, and retrospectives to optimize development cycles.</li>
-                        <li>Designing and developing a cross-platform metronome app using Flutter in Dart with MongoDB as the backend for secure and scalable
-                            data management.</li>
-                        <li>Implementing features like voice control and user-specific sign-in, allowing conductors to assign musical pieces with tempo goals and
-                            monitor band members' practice progress in real-time.</li>
-                        <li>Prioritizing user experience (UX) to create an intuitive and engaging interface, supporting seamless practice tracking and performance
-                            assessment.</li>   
-                    </ul>
-                </div>
-                <div class="project">
-                    <h3>Homepwner App</h3>
-                    <p>Android Programming Class Project | Java, Android Studio | Sep 2024 - Present</p>
-                    <ul>
-                        <li>Developing an app for cataloging possessions for home insurance purposes.</li>
-                        <li>Utilizing Java in Android Studio to build features for item entry and tracking.</li>
-                        <li>Designing an intuitive interface to enhance user experience, with options for adding photos and detailed descriptions for each item.</li>
+      <!-- Projects Section -->
+<div id="projects" class="section">
+    <h2>Project Experience</h2>
+    <div class="projects-container">
+        <button class="project-rect" data-project="metronome">Metronome App</button>
+        <button class="project-rect" data-project="homepwner">Homepwner App</button>
+        <!-- Add more project buttons here -->
+    </div>
+    <!-- Hidden project details -->
+    <div class="project" style="display:none;" id="metronome">
+        <p>Scrum Master | Flutter, Dart, MongoDB | Sep 2024 - Present</p>
+        <ul>
+            <li>Leading agile ceremonies, sprint planning, and retrospectives to optimize development cycles.</li>
+            <li>Designing and developing a cross-platform metronome app using Flutter in Dart with MongoDB as the backend for secure and scalable data management.</li>
+            <li>Implementing features like voice control and user-specific sign-in, allowing conductors to assign musical pieces with tempo goals and monitor band members' practice progress in real-time.</li>
+            <li>Prioritizing user experience (UX) to create an intuitive and engaging interface, supporting seamless practice tracking and performance assessment.</li>   
+        </ul>
+        <p>View this project on GitHub: https://github.com/AdnanKhaleeli/MetronomeAPP</p>
 
-                    </ul>
-                </div>
-            </div>
-            <div id="experience" class="section">
-                <h2>Professional Experience</h2>
-                <div class="experience">
-                    <h3>AT&T, King of Prussia, PA</h3>
-                    <p>Radio Network Engineer Intern</p>
-                    <ul>
-                        <li> Learned and utilized VBA to enhance and automate functionality in company programs, improving efficiency and data management.</li>
-                        <li>Analyzed cell tower plumb diagrams for network design.</li>
-                        <li> Conducted site visits to cell towers, assisting senior engineers in performing tests and maintenance to ensure operation and compliance
-                            with standards.</li>
-                    </ul>
-                </div>
-                <div class="experience">
-                    <h3>Lockheed Martin, Moorestown, NJ</h3>
-                    <p>Systems Engineer Intern (DoD Secret Clearance Granted)</p>
-                    <ul>
-                        <li>Implemented CI/CD processes using Git/Bitbucket and Jira/Crucible.</li>
-                        <li>Developed software solutions for version control migration.</li>
-                        <li> Created comprehensive documentation and a training package to facilitate engineers' transition to the new workflow and toolsets,
-                            enhancing team productivity and adoption. </li>
-                    </ul>
-                </div>
-                <div class="experience">
-                    <h3>LaScala's Fire, Glassboro, NJ</h3>
-                    <p>Bartender/Server</p>
-                    <ul>
-                        <li>Managed a full-time bartending role while pursuing a full-time university degree, demonstrating strong time management and work ethic.</li>
-                        <li>Built rapport with guests, enhancing dining experience.</li>
-                        <li> Supported team members during high-volume shifts, enhancing workflow and customer satisfaction through effective collaboration.</li>
-                    </ul>
-                </div>
-            </div>
+    </div>
+    
+    <div class="project" style="display:none;" id="homepwner">
+        <p>Android Programming Class Project | Java, Android Studio | Sep 2024 - Present</p>
+        <ul>
+            <li>Developing an app for cataloging possessions for home insurance purposes.</li>
+            <li>Utilizing Java in Android Studio to build features for item entry and tracking.</li>
+            <li>Designing an intuitive interface to enhance user experience, with options for adding photos and detailed descriptions for each item.</li>
+        </ul>
+        <p>View this project on GitHub: https://github.com/hikal-mazahra/Homepwner</p>
+
+    </div>
+    
+    <!-- Dialog for project details -->
+    <dialog id="projectDialog">
+        <h2 id="projectTitle">Project Details</h2>
+        <div id="projectContent"></div>
+        <button id="closeDialog">Close</button>
+    </dialog>
+</div>
+<div id="experience" class="section">
+    <h2>Work Experience</h2>
+
+    <div class="projects-container"> <!-- Reusing the class for styling -->
+        <button class="project-rect" data-experience="att">
+            <img src="att.png" alt="AT&T Logo" class="company-logo">
+            <div class="job-title">Radio Network Engineer</div>
+        </button>
+        <button class="project-rect" data-experience="lockheed">
+            <img src="lockheed.png" alt="Lockheed Martin Logo" class="company-logo">
+            <div class="job-title">Systems Engineer</div>
+        </button>
+        <button class="project-rect" data-experience="lascalas">
+            <img src="lascalas.png" alt="LaScala's Fire Logo" class="company-logo">
+            <div class="job-title">Bartender/Server</div>
+        </button>
+    </div>
+    
+    <!-- Hidden experience details -->
+    <div class="experience" style="display:none;" id="att">
+        <h3>AT&T, King of Prussia, PA</h3>
+        <p>Radio Network Engineer Intern</p>
+        <ul>
+            <li>Learned and utilized VBA to enhance and automate functionality in company programs, improving efficiency and data management.</li>
+            <li>Analyzed cell tower plumb diagrams for network design.</li>
+            <li>Conducted site visits to cell towers, assisting senior engineers in performing tests and maintenance to ensure operation and compliance with standards.</li>
+        </ul>
+    </div>
+    
+    <div class="experience" style="display:none;" id="lockheed">
+        <h3>Lockheed Martin, Moorestown, NJ</h3>
+        <p>Systems Engineer Intern (DoD Secret Clearance Granted)</p>
+        <ul>
+            <li>Implemented CI/CD processes using Git/Bitbucket and Jira/Crucible.</li>
+            <li>Developed software solutions for version control migration.</li>
+            <li>Created comprehensive documentation and a training package to facilitate engineers' transition to the new workflow and toolsets, enhancing team productivity and adoption.</li>
+        </ul>
+    </div>
+    
+    <div class="experience" style="display:none;" id="lascalas">
+        <h3>LaScala's Fire, Glassboro, NJ</h3>
+        <p>Bartender/Server</p>
+        <ul>
+            <li>Managed a full-time bartending role while pursuing a full-time university degree, demonstrating strong time management and work ethic.</li>
+            <li>Built rapport with guests, enhancing dining experience.</li>
+            <li>Supported team members during high-volume shifts, enhancing workflow and customer satisfaction through effective collaboration.</li>
+        </ul>
+    </div>
+</div>
             <div id="education" class="section">
                 <h2>Education</h2>
                 <div class="education">
