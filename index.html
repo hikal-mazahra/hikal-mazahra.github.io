@@ -1,522 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hikal Mazahra - Senior Computer Science Student at Rowan University</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #2c3e50; /* Dark Blue Gray */
-            color: #ecf0f1; /* Light Gray for text */
-        }
-    
-        .top-bar {
-            background-color: #34495e; /* Slightly lighter Dark Blue Gray */
-            color: #ecf0f1;
-            text-align: center;
-            padding: 1rem;
-            font-size: 1.5rem; /* Reduced base size for smaller screens */
-        }
-    
-        .profile-picture {
-            width: 30%; /* Increased width for smaller screens */
-            height: auto; /* Use auto height to maintain aspect ratio */
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: block;
-            border: 4px solid #ecf0f1; /* Reduced border size for smaller screens */
-        }
-    
-        .main-layout {
-            display: flex;
-            flex-direction: column; /* Stacks elements on small screens */
-        }
-    
-        .sidebar {
-            width: 100%; /* Full width on mobile */
-            background-color: #2980b9;
-            padding: 1rem;
-            height: auto; /* Height adjusts to content */
-            overflow-y: auto;
-            order: -1; /* Moves sidebar above content on small screens */
-        }
-    
-        .sidebar nav {
-            display: flex;
-            flex-direction: column;
-        }
-    
-        .sidebar nav a {
-            color: #ecf0f1;
-            text-decoration: none;
-            padding: 10px;
-            margin-bottom: 5px;
-            border-radius: 4px;
-        }
-    
-        .sidebar nav a:hover {
-            background-color: #3498db;
-        }
-    
-        .content {
-            flex: 1;
-            padding: 1rem; /* Reduced padding for smaller screens */
-        }
-    
-        .section {
-            margin-bottom: 1rem; /* Reduced margin for smaller screens */
-            background: #34495e;
-            border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-    
-        .section h2 {
-            color: #27ae60;
-            font-size: 1.2rem; /* Smaller heading for smaller screens */
-        }
-    
-        .project, .experience, .education {
-            border: 1px solid #7f8c8d;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background: #2c3e50;
-            border-radius: 4px;
-        }
-    
-        .contact-info {
-            font-style: italic;
-            color: #ecf0f1;
-        }
-    
-        .contact-info a {
-            color: #3498db;
-        }
-    
-        .usa-citizen {
-            font-style: italic;
-            color: #2980b9;
-            margin-top: 10px;
-        }
-    
-        .languages, .databases {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px; /* Reduced gap for smaller screens */
-        }
-    
-        .languages span, .databases span {
-            background-color: #7f8c8d;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.9rem; /* Smaller text for smaller screens */
-        }
-    
-        .logo-row {
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            padding: 1rem 0;
-            flex-wrap: wrap; /* Allows logos to wrap on smaller screens */
-        }
-    
-        .logo-row img {
-            max-height: 60px; /* Smaller logo size for smaller screens */
-            margin: 0 5px;
-        }
-    
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-            flex-wrap: wrap; /* Allows social icons to wrap */
-        }
-    
-        .social-links a {
-            margin: 0 5px; /* Reduced margin for smaller screens */
-        }
-    
-        .social-links img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-        }
-    
-        .skills-section {
-            margin-bottom: 1rem;
-            background: #34495e;
-            border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-    
-        .skills-section h2 {
-            color: #27ae60;
-            font-size: 1.2rem;
-        }
-    
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: space-around;
-        }
-    
-        .skill-item {
-            flex: 0 1 calc(50% - 10px); /* Two items per row on smaller screens */
-            box-sizing: border-box;
-            background-color: #7f8c8d;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-    
-        .skill-item img {
-            width: 40px; /* Smaller image for smaller screens */
-            height: auto;
-            display: block;
-            margin: 0 auto 10px;
-        }
-    
-        .skill-item p {
-            font-size: 12px;
-            color: #ecf0f1;
-        }
-    
-        dialog {
-            border: none;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-    
-        dialog::backdrop {
-            background-color: rgba(0,0,0,0.5);
-        }
-    
-        .projects-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-    
-        .project-rect {
-            width: 100%; /* Full width on mobile */
-            height: auto;
-            padding: 20px 0;
-            background-color: #3498db;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            font-size: 1em; /* Smaller font size */
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
-            border: 2px solid transparent;        }
-    
-        .project-rect:hover {
-            transform: scale(1.05);
-            background-color: #2980b9;
-            border-color: #ecf0f1; /* Add a border when hovered or focused */
-            outline: none; /* Remove default focus outline for a cleaner look */
-
-        }
-        .project-rect:focus {
-           box-shadow: 0 0 0 2px #ecf0f1; /* Adds a subtle focus ring */
-        }
-        .company-logo {
-            max-width: 80px; /* Smaller logo for smaller screens */
-            max-height: 80px;
-            margin-bottom: 10px;
-        }
-    
-        .job-title {
-            font-size: 1em;
-            font-family: 'Georgia', serif;
-            padding: 0 10px;
-            word-wrap: break-word;
-            line-height: 1.4;
-        }
-    
-        /* Media query for larger screens */
-        @media screen and (min-width: 768px) {
-            .main-layout {
-                flex-direction: row; /* Reverts back to row layout for larger screens */
-            }
-    
-            .sidebar {
-                width: 200px; /* Sidebar width on larger screens */
-                height: calc(100vh - 50px);
-                position: sticky;
-                top: 50px;
-                order: 0; /* Normal order on larger screens */
-            }
-    
-            .content {
-                padding: 2rem;
-            }
-    
-            .top-bar {
-                font-size: 2rem;
-            }
-    
-            .profile-picture {
-                width: 20%;
-                height: 10%;
-                border: 8px solid #ecf0f1;
-            }
-    
-            .skill-item {
-                flex: 0 1 calc(33.333% - 20px); /* Three items per row on larger screens */
-            }
-    
-            .project-rect {
-                width: 400px;
-                height: 200px;
-            }
-    
-            .languages span, .databases span {
-                font-size: 1rem;
-            }
-    
-            .company-logo {
-                max-width: 120px;
-                max-height: 120px;
-            }
-    
-            .job-title {
-                font-size: 1.1em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hikal Mazahra - Software Engineer</title>
+  <meta name="description" content="Software Engineer at ASRC Federal | C++, Ada, TCL | B.S. Computer Science '25 | Incoming M.S. CS @ UT Austin '28">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top-bar">
-        <img src="Hikal_sq.png" alt="Hikal Mazahra" class="profile-picture">
-        <h2>Hikal Mazahra</h2>
-        <p>Computer Science student at Rowan University</p>
-        <p>Graduating in May 2025</p>
-    </div>
-    <!-- Added logo row here -->
-    <div class="logo-row">
-        <img src="drexel.png" alt="Drexel Logo">
-        <img src="rowan.png" alt="Rowan Logo">
-        <img src="lockheed.png" alt="Lockheed Logo">
-        <img src="att.png" alt="AT&T Logo">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm Hikal Mazahra</h1>
+      <h2>Software Engineer at ASRC Federal</h2>
+      <p class="subtag">Incoming M.S. in Computer Science @ UT Austin (Jan 2026)</p>
 
     </div>
-    <div class="main-layout">
-        <div class="sidebar">
-            <nav>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="#programming">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Professional Experience</a>
-                <a href="#education">Education</a>
-            </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- About -->
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      
+      <p style="margin-bottom: 1.8rem;"><strong>U.S. Citizen • Active DoD Secret Clearance</strong></p>
+      
+      <p style="margin-bottom: 1.8rem;">
+        I'm Hikal — <strong>Software Engineer</strong> at ASRC Federal building mission-critical, real-time embedded software for the U.S. Navy’s Aegis combat system on classified networks.
+      </p>
+      
+      <p style="margin-bottom: 1.8rem;">
+        Graduated with a B.S. in Computer Science from Rowan University (May 2025) and starting a Master of Science in Computer Science at <strong>The University of Texas at Austin</strong> in January 2026 — one of the nation’s top-ranked programs, especially renowned for its world-class artificial intelligence research and offerings.
+      </p>
+      
+      <p style="margin-bottom: 1.8rem;">
+        Ambitious and future-focused, I’m driven by the belief that disciplined engineering and emerging technology can solve the hardest problems in defense and beyond. Outside of code, I treat health and fitness with the same intensity — a healthy body powers a sharp mind.
+      </p>
+      
+      <p style="margin-bottom: 0;">
+        Always excited to connect with others who are building what’s next.
+      </p>
+
+    </div>
+  </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="jobs-timeline">
+          <div class="job">
+            <div class="job-header">
+              <h3>Software Engineer <span class="clearance">(DoD Secret Clearance)</span></h3>
+              <span class="company">ASRC Federal</span>
+              <span class="date">Jun 2025 – Present</span>
+            </div>
+            <ul>
+              <li>Collaborated closely with systems engineers in an Agile environment to interpret complex specifications and translate functional requirements into robust, mission-critical software solutions using C++, Ada, Java, and Tcl/Tk.</li>
+              <li>Designed, developed, and maintained high-reliability software systems for federal and defense clients, leveraging modern C++ (11/14/17/20), Ada 2012, and Java in safety- and security-sensitive environments.</li>
+              <li>Contributed to full software development lifecycle (requirements analysis, architecture, implementation, unit/integration testing, and delivery) on large-scale DoD/aerospace programs at ASRC Federal, consistently delivering on-schedule increments in Scrum-based teams.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <h3>Radio Network Engineer Intern</h3>
+              <span class="company">AT&T</span>
+              <span class="date">Sep 2020 – Mar 2021</span>
+            </div>
+            <ul>
+              <li>Automated workflows using VBA to improve efficiency and data management</li>
+              <li>Analyzed cell tower plumb diagrams for accurate network design</li>
+              <li>Conducted site visits to cell towers for testing and maintenance</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <h3>Systems Engineer Intern <span class="clearance">(DoD Secret Clearance)</span></h3>
+              <span class="company">Lockheed Martin</span>
+              <span class="date">Sep 2019 – Mar 2020</span>
+            </div>
+            <ul>
+              <li>Implemented CI/CD processes using Git/Bitbucket and Jira/Crucible</li>
+              <li>Developed Python/Linux tools to migrate version control from ClearCase to Git</li>
+              <li>Created documentation and training materials for engineers</li>
+            </ul>
+          </div>
         </div>
-        <div class="content">
-            <!-- Rest of the content remains unchanged -->
-            <div id="about" class="section">
-                <h2>About Me</h2>
-                <p class="usa-citizen">Hikal Mazahra</p>
+      </div>
+    </section>
 
-                <p class="usa-citizen">U.S. Citizen</p>
-                <p class="usa-citizen">Bachelor of Science in Computer Science</p>
-
-                <p>I'm a Computer Science student at Rowan University, with an expected graduation date in May 2025.</p>
-                <p>I've gained experience in coding with Python and VBA through internships, and I'm proficient in Java and Dart from my coursework. </p>
-                <p>My versatility extends to various programming languages, including Scheme, Ada, Prolog, and Ruby. I have demonstrated abilities in leading technical projects, developing custom software solutions, and optimizing network performance.</p>                
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/hikal-mazahra-6021a7187/" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
-                    <a href="https://github.com/hikal-mazahra" target="_blank"><img src="github.png" alt="GitHub"></a>
-                    <a href="mailto:hikal.mazahra@yahoo.com" target="_blank"><img src="email.png" alt="Email"></a>
-
-                </div>
-            </div>
-            <div id="contact" class="section">
-                <h2>Contact Info</h2>
-                <p class="contact-info">
-                    Phone: 609-982-9357<br>
-                    Email: <a href="mailto:hikal.mazahra@yahoo.com">hikal.mazahra@yahoo.com</a><br>
-                    GitHub: <a href="https://github.com/hikal-mazahra">hikal-mazahra</a><br>
-                    LinkedIn: <a href="https://www.linkedin.com/in/hikal-mazahra-6021a7187/">Hikal Mazahra</a>
-                </p>
-            </div>
-            <div id=programming class="skills-section">
-                <h2>Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <img src="leader.png" alt="Skill 0">
-                        <h3>Leadership</h3>
-                        <p>Proven leadership skills as Scrum Master for the metronome app project, managing team coordination, sprint planning, and ensuring agile practices were followed in both academic and professional settings.</p>
-                    </div>
-                    <div class="skill-item">
-                        <img src="python.png" alt="Skill 1">
-                        <h3>Python</h3>
-                        <p>Proficient in Python, utilized extensively in coursework at Drexel University and during an internship at Lockheed Martin for various programming tasks.</p>
-                    </div>
-                    <div class="skill-item">
-                        <img src="flutter.png" alt="Skill 2">
-                        <h3>Flutter</h3>
-                        <p>Experienced with Flutter for developing a cross-platform metronome app, ensuring consistency across iOS and Android.</p>
-                    </div>
-                    <div class="skill-item">
-                        <img src="java.png" alt="Skill 3">
-                        <h3>Java</h3>
-                        <p>Strong foundation in Java, gained through multiple CS courses at Rowan University, focusing on object-oriented programming concepts.</p>
-                    </div>
-                    <div class="skill-item">
-                        <img src="SQL.png" alt="Skill 4">
-                        <h3>SQL</h3>
-                        <p>Skilled in SQL for database management, learned through coursework at Rowan University.</p>
-                    </div>
-                    <div class="skill-item">
-                        <img src="github.png" alt="Skill 5">
-                        <h3>GitHub</h3>
-                        <p>Extensive use of GitHub for version control throughout my academic projects, enhancing collaboration and code management.</p>
-                    </div>
-                    <div class="skill-item">
-                        <img src="JS.png" alt="Skill 6">
-                        <h3>JavaScript</h3>
-                        <p>Self-taught proficiency in JavaScript, applied in the development of this website for interactive user experiences.</p>
-                    </div>
-                    <div class="skill-item">
-                        <img src="html.png" alt="Skill 7">
-                        <h3>HTML</h3>
-                        <p>Self-learned HTML, used to structure this personal website.</p>
-                    </div>
-                    <div class="skill-item">
-                        <img src="matlab.png" alt="Skill 8">
-                        <h3>MatLab</h3>
-                        <p>Competent in MatLab, particularly for solving complex mathematical problems during my linear algebra course at Drexel University.</p>
-                    </div>
-                    <div class="skill-item">
-                        <img src="linux.png" alt="Skill 9">
-                        <h3>Linux</h3>
-                        <p>Experienced with Linux, both in academic settings at Drexel and Rowan, and professionally at Lockheed Martin, for system administration and development environments.</p>
-                    </div>
-                    <div class="skill-item">
-                        <img src="mongodb.png" alt="Skill 10">
-                        <h3>MongoDB</h3>
-                        <p>Utilized MongoDB as the backend database for my metronome app.</p>
-                    </div>
-                </div>
-      <!-- Projects Section -->
-<div id="projects" class="section">
-    <h2>Project Experience</h2>
-    <div class="projects-container">
-        <button class="project-rect" data-project="metronome" aria-label="View details for Metronome App">Metronome App</button>
-        <button class="project-rect" data-project="homepwner" aria-label="View details for Homepwner App">Homepwner App</button>
-                <!-- Add more project buttons here -->
-    </div>
-    <!-- Hidden project details -->
-    <div class="project" style="display:none;" id="metronome">
-        <p>Scrum Master | Flutter, Dart, MongoDB | Sep 2024 - Present</p>
-        <ul>
-            <li>Leading agile ceremonies, sprint planning, and retrospectives to optimize development cycles.</li>
-            <li>Designing and developing a cross-platform metronome app using Flutter in Dart with MongoDB as the backend for secure and scalable data management.</li>
-            <li>Implementing features like voice control and user-specific sign-in, allowing conductors to assign musical pieces with tempo goals and monitor band members' practice progress in real-time.</li>
-            <li>Prioritizing user experience (UX) to create an intuitive and engaging interface, supporting seamless practice tracking and performance assessment.</li>   
-        </ul>
-        <p><a href="https://github.com/AdnanKhaleeli/MetronomeAPP" target="_blank">View this project on GitHub</a></p>
-    </div>
-    
-    <div class="project" style="display:none;" id="homepwner">
-        <p>Android Programming Class Project | Java, Android Studio | Sep 2024 - Present</p>
-        <ul>
-            <li>Developing an app for cataloging possessions for home insurance purposes.</li>
-            <li>Utilizing Java in Android Studio to build features for item entry and tracking.</li>
-            <li>Designing an intuitive interface to enhance user experience, with options for adding photos and detailed descriptions for each item.</li>
-        </ul>
-        <p><a href="https://github.com/hikal-mazahra/Homepwner" target="_blank">View this project on GitHub</a></p>
-
-    </div>
-    
-    <!-- Dialog for project details -->
-    <dialog id="projectDialog">
-        <h2 id="projectTitle">Project Details</h2>
-        <div id="projectContent"></div>
-        <button id="closeDialog">Close</button>
-    </dialog>
-</div>
-<div id="experience" class="section">
-    <h2>Work Experience</h2>
-
-    <div class="projects-container"> <!-- Reusing the class for styling -->
-        <button class="project-rect" data-experience="att">
-            <img src="att.png" alt="AT&T Logo" class="company-logo">
-            <div class="job-title">Radio Network Engineer</div>
-        </button>
-        <button class="project-rect" data-experience="lockheed">
-            <img src="lockheed.png" alt="Lockheed Martin Logo" class="company-logo">
-            <div class="job-title">Systems Engineer</div>
-        </button>
-        <button class="project-rect" data-experience="lascalas">
-            <img src="lascalas.png" alt="LaScala's Fire Logo" class="company-logo">
-            <div class="job-title">Bartender/Server</div>
-        </button>
-    </div>
-    
-    <!-- Hidden experience details -->
-    <div class="experience" style="display:none;" id="att">
-        <h3>AT&T, King of Prussia, PA</h3>
-        <p>Radio Network Engineer Intern</p>
-        <ul>
-            <li>Learned and utilized VBA to enhance and automate functionality in company programs, improving efficiency and data management.</li>
-            <li>Analyzed cell tower plumb diagrams for network design.</li>
-            <li>Conducted site visits to cell towers, assisting senior engineers in performing tests and maintenance to ensure operation and compliance with standards.</li>
-        </ul>
-    </div>
-    
-    <div class="experience" style="display:none;" id="lockheed">
-        <h3>Lockheed Martin, Moorestown, NJ</h3>
-        <p>Systems Engineer Intern (DoD Secret Clearance Granted)</p>
-        <ul>
-            <li>Implemented CI/CD processes using Git/Bitbucket and Jira/Crucible.</li>
-            <li>Developed software solutions for version control migration.</li>
-            <li>Created comprehensive documentation and a training package to facilitate engineers' transition to the new workflow and toolsets, enhancing team productivity and adoption.</li>
-        </ul>
-    </div>
-    
-    <div class="experience" style="display:none;" id="lascalas">
-        <h3>LaScala's Fire, Glassboro, NJ</h3>
-        <p>Bartender/Server</p>
-        <ul>
-            <li>Managed a full-time bartending role while pursuing a full-time university degree, demonstrating strong time management and work ethic.</li>
-            <li>Built rapport with guests, enhancing dining experience.</li>
-            <li>Supported team members during high-volume shifts, enhancing workflow and customer satisfaction through effective collaboration.</li>
-        </ul>
-    </div>
-</div>
-            <div id="education" class="section">
-                <h2>Education</h2>
-                <div class="education">
-                    <h3>Rowan University</h3>
-                    <p>2023 - 2025</p>
-                    <p>Bachelor of Science in Computer Science</p>
-                    <p>Graduating May 2025</p>
-
-                </div>
-                <div class="education">
-                    <h3>Drexel University</h3>
-                    <p>2019 - 2021</p>
-                    <p>Completed first two years of my degree at Drexel University</p>
-                </div>
-            </div>
-            
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+          <div class="edu-card">
+            <h3>Master of Science in Computer Science</h3>
+            <p>The University of Texas at Austin</p>
+            <span class="date">Jan 2026 – May 2028 (Expected)</span>
+          </div>
+          <div class="edu-card">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p>Rowan University • Glassboro, NJ</p>
+            <span class="date">Graduated May 2025</span>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <script src="./script.js"></script>
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Academic Projects</h2>
+        <div class="projects-grid">
+          <article class="project">
+            <h3>Metronome App <span class="role">(Scrum Master)</span></h3>
+            <p>Sep 2024 – Dec 2024 • Flutter, Dart, MongoDB</p>
+            <ul>
+              <li>Led a team of 7 as Scrum Master — agile ceremonies, sprint planning, retrospectives</li>
+              <li>Built cross-platform mobile app with voice control and real-time practice tracking</li>
+              <li>Designed MongoDB backend for secure, scalable user data and progress monitoring</li>
+            </ul>
+            <a href="https://github.com/AdnanKhaleeli/MetronomeAPP" target="_blank">GitHub →</a>
+          </article>
+
+          <article class="project">
+            <h3>Homepwner App</h3>
+            <p>Sep 2024 – Dec 2024 • Java, Android Studio</p>
+            <ul>
+              <li>Android app for cataloging personal possessions for insurance purposes</li>
+              <li>Built item entry, photo upload, value tracking, and detailed reporting features</li>
+              <li>Focused on clean architecture and intuitive user experience</li>
+            </ul>
+            <a href="https://github.com/hikal-mazahra/Homepwner" target="_blank">GitHub →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Hikal Mazahra • Cherry Hill, NJ • <a href="mailto:hikal.mazahra@yahoo.com">hikal.mazahra@yahoo.com</a></p>
+      <p><a href="https://linkedin.com/in/hikal-mazahra-6021a7187" target="_blank">LinkedIn</a> • <a href="https://github.com/hikal-mazahra" target="_blank">GitHub</a></p>
+      <p class="small">© 2025 Hikal Mazahra. Built with HTML, CSS, and JS.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

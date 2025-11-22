@@ -1,14 +1,216 @@
+:root {
+  --bg: #0f172a;        /* Soft deep navy - looks premium, not black */
+  --surface: #1e293b;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent: #38bdf8;     /* Sky blue accent */
+  --border: #334155;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 1.1rem;
 }
-h1 {
-    color: #333;
-    text-align: center;
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
-a {
-    color: #0066cc;
-    text-decoration: none;
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: var(--accent);
+  color: black;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.skip-link:focus { top: 10px; }
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1.5rem 0;
+  gap: 3rem;
+}
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links a:hover, .nav-links a:focus {
+  color: var(--accent);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+}
+.hero-content h1 {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.hero-content h2 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.tagline {
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  color: var(--text);
+}
+.subtag {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+.btn-resume {
+  display: inline-block;
+  margin-top: 2rem;
+  background: var(--accent);
+  color: black;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.btn-resume:hover {
+  background: #7dd3fc;
+  transform: translateY(-3px);
+}
+
+.section {
+  padding: 120px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.section.visible { opacity: 1; transform: translateY(0); }
+
+.section-title {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--accent);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 2rem;
+  list-style: none;
+}
+.skills-list li {
+  background: var(--surface);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+}
+
+.jobs-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.job {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+}
+.job-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.job-header h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+.company {
+  color: var(--accent);
+  font-weight: 600;
+}
+.date {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+.clearance {
+  font-size: 0.8rem;
+  background: #dc2626;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.education-grid, .projects-grid {
+  display: grid;
+  gap: 2rem;
+}
+.edu-card, .project {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.project h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.role {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.project a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.project a:hover { text-decoration: underline; }
+
+footer {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.small { font-size: 0.9rem; margin-top: 1rem; display: block; color: #64748b; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-links { gap: 1.5rem; flex-wrap: wrap; padding: 1rem; }
+  .job-header { flex-direction: column; }
+  .hero-content h1 { font-size: 3.5rem; }
 }
